@@ -1,0 +1,202 @@
+---
+interface Props {
+  dateline?: string;
+  body?: string;
+  kickerEdit?: Record<string, string>;
+  titleEdit?: Record<string, string>;
+  bodyEdit?: Record<string, string>;
+  subtext?: string;
+  subtextEdit?: Record<string, string>;
+  sideNote?: string;
+  sideNoteEdit?: Record<string, string>;
+}
+
+const {
+  dateline = "Charts read by hand · one at a time",
+  body = "A map of how you are built to decide, drawn from your birth date, time and place. Nothing here forecasts events.",
+  kickerEdit = {},
+  titleEdit = {},
+  bodyEdit = {},
+  subtext = "Coloured centres are consistent in you. Open ones are where you absorb everyone else. Start with the free chart, decide about a reading after.",
+  subtextEdit = {},
+  sideNote = "Every chart on this page is drawn and read by one person, in plain language, and the recording stays yours.",
+  sideNoteEdit = {},
+} = Astro.props;
+---
+
+<section class="home-hero" data-home-hero>
+  <p class="hero-dateline" data-hero-dateline {...kickerEdit}>{dateline}</p>
+  <h1 class="hero-title" data-hero-title {...titleEdit}>
+    <span class="stagger-line line-1">Your chart</span>
+    <span class="stagger-line line-2">already knows</span>
+    <span class="stagger-line line-3">how you were</span>
+    <span class="stagger-line line-4">built to <span class="accent-text">decide.</span></span>
+  </h1>
+
+  <div class="hero-grid">
+    <div class="hero-col-main">
+      <p class="lead-text" {...bodyEdit}>{body}</p>
+      <p class="sub-text" {...subtextEdit}>{subtext}</p>
+    </div>
+    <div class="hero-col-side">
+      <p class="side-note" {...sideNoteEdit}>{sideNote}</p>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-card stat-1">
+      <p class="stat-number">1,400+</p>
+      <p class="stat-label">Charts read</p>
+    </div>
+    <div class="stat-card stat-2">
+      <p class="stat-number">75 min</p>
+      <p class="stat-label">Standard session</p>
+    </div>
+    <div class="stat-card stat-3">
+      <p class="stat-number accent-num">Yours</p>
+      <p class="stat-label">Recording to keep</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-hero {
+    background: #1230C8;
+    color: #F5F1E8;
+    padding: 76px 32px 40px;
+  }
+
+  .hero-dateline {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: #FF6B4A;
+    margin: 0 0 44px;
+  }
+
+  .hero-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(34px, 5.6vw, 86px);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+  }
+
+  .stagger-line {
+    display: block;
+  }
+
+  .line-1 { margin-left: 0; }
+  .line-2 { margin-left: 7vw; }
+  .line-3 { margin-left: 14vw; }
+  .line-4 { margin-left: 21vw; }
+
+  .accent-text {
+    color: #FF6B4A;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+  }
+
+  .hero-col-main {
+    grid-column: 2 / span 5;
+  }
+
+  .lead-text {
+    font-size: 21px;
+    line-height: 1.45;
+    margin: 0 0 18px;
+    text-wrap: pretty;
+  }
+
+  .sub-text {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #B9C4FF;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .hero-col-side {
+    grid-column: 8 / span 4;
+    padding-top: 52px;
+  }
+
+  .side-note {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #B9C4FF;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 56px;
+    margin-top: 72px;
+  }
+
+  .stat-card {
+    border-top: 2px solid #FF6B4A;
+    padding-top: 14px;
+  }
+
+  .stat-1 { margin-bottom: 0; }
+  .stat-2 { margin-bottom: 34px; }
+  .stat-3 { margin-bottom: 68px; }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin: 0 0 10px;
+  }
+
+  .stat-number.accent-num {
+    color: #FF6B4A;
+  }
+
+  .stat-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #B9C4FF;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-col-main, .hero-col-side {
+      grid-column: span 1;
+      padding-top: 0;
+    }
+    .line-2, .line-3, .line-4 {
+      margin-left: 0;
+    }
+    .stat-2, .stat-3 {
+      margin-bottom: 0;
+    }
+    .hero-stats {
+      gap: 28px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .home-hero {
+      padding: 48px 20px 32px;
+    }
+  }
+</style>

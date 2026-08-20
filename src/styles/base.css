@@ -1,0 +1,98 @@
+:root {
+  color-scheme: light;
+  --color-cobalt: #1230C8;
+  --color-cream: #F5F1E8;
+  --color-ink: #0A1030;
+  --color-accent: #FF6B4A;
+  --color-muted: #9096AD;
+  --color-soft-blue: #B9C4FF;
+  --color-subtle-border: rgba(10, 16, 48, 0.18);
+  --color-text-dark: #4B5169;
+  --color-text-light: #F5F1E8;
+
+  --font-display: 'Unbounded', Helvetica, Arial, sans-serif;
+  --font-sans: 'Familjen Grotesk', Helvetica, Arial, sans-serif;
+
+  /* Bodygraph Canvas Custom Tokens */
+  --hd-bg-primary: #1230C8;
+  --hd-bg-secondary: #0A1030;
+  --hd-text-primary: #F5F1E8;
+  --hd-text-secondary: #B9C4FF;
+  --hd-cta-primary: #FF6B4A;
+  --hd-pipe-bg: rgba(10, 16, 48, 0.45);
+  --hd-personality-pipe: #0A1030;
+  --hd-center-head: #F5F1E8;
+  --hd-center-ajna: #1230C8;
+  --hd-center-throat: #F5F1E8;
+  --hd-center-g: #F5F1E8;
+  --hd-center-ego: #FF6B4A;
+  --hd-center-spleen: #1230C8;
+  --hd-center-sacral: #F5F1E8;
+  --hd-center-solar: #1230C8;
+  --hd-center-root: #F5F1E8;
+  --hd-gate-active-bg: #FF6B4A;
+  --hd-gate-active-text: #0A1030;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+a {
+  color: var(--color-cobalt);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+input, select, button, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+::placeholder {
+  color: var(--color-muted);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.site-wrap {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Staggered margins for reading cards & types */
+.stagger-1 { margin-left: 0%; }
+.stagger-2 { margin-left: 5%; }
+.stagger-3 { margin-left: 10%; }
+
+@media (max-width: 768px) {
+  .stagger-1, .stagger-2, .stagger-3 {
+    margin-left: 0 !important;
+  }
+}
+
+.site-wrap {
+  max-width: 100%;
+  overflow-x: clip;
+}
