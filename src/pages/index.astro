@@ -91,16 +91,17 @@ const seoContent = {
         bodyEdit={toDataset(builderEdit("hero_body"))}
         subtextEdit={toDataset(builderEdit("hero_subtext"))}
         sideNoteEdit={toDataset(builderEdit("hero_side_note"))}
-      />
-
-      <!-- Bodygraph Generator Form & Result Section -->
-      <BodygraphGeneratorSection
-        resultHref={localizePath("/human-design", locale)}
-        title={content.generator_title}
-        description={content.generator_body}
-        titleEdit={toDataset(builderEdit("generator_title"))}
-        descriptionEdit={toDataset(builderEdit("generator_body"))}
-      />
+      >
+        <BodygraphGeneratorSection
+          slot="generator"
+          embedded
+          resultHref={localizePath("/human-design", locale)}
+          title={content.generator_title}
+          description={content.generator_body}
+          titleEdit={toDataset(builderEdit("generator_title"))}
+          descriptionEdit={toDataset(builderEdit("generator_body"))}
+        />
+      </HomeHero>
 
       <!-- 01. Plate Diagram Section -->
       <NineCentresSection eyebrow={content.nine_centres_eyebrow} title={content.nine_centres_title} eyebrowEdit={toDataset(builderEdit("nine_centres_eyebrow"))} titleEdit={toDataset(builderEdit("nine_centres_title"))} />

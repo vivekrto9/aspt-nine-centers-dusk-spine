@@ -2,6 +2,8 @@
 
 The Dusk Spine Human Design template, initialized from the completed Nine Centres Cobalt implementation. It preserves the production chart, interpretation, and Stripe payment flows while the presentation layer is rebuilt around the Dusk Spine reference.
 
+It is a runnable AstroPages template rather than a library-only package. AstroPages Admin owns the semantic version, release notes, and changelog for every released template commit.
+
 ## Release Metadata
 
 Template source identifies an immutable technical commit, but never gates a release on a source-controlled template version. After a production workflow succeeds, use AstroPages Admin to verify that commit and select its semantic version, release notes, and changelog. Do not add `version`, `registryVersionId`, or a template registry-version lock to a derived template manifest.

@@ -129,12 +129,11 @@ const displayBirthline = savedProfile
             <div class="hd-chart-canvas">
               <UpastroBodyGraphCanvas theme="dark" chartData={chartView.chartData} interactive={false} client:only="react">
                 <div slot="fallback" class="hd-chart-fallback" aria-label="Loading interactive bodygraph">
-                  <BodyGraphCanvas theme="cobalt" />
+                  <BodyGraphCanvas theme="dusk" />
                 </div>
               </UpastroBodyGraphCanvas>
               <footer>
                 <p>{chartView.definedCenters.length} defined centres · {chartView.activeGates.length} active gates · {chartView.channels.length} active channels</p>
-                <div><span><i></i>Defined</span><span><i></i>Open</span></div>
               </footer>
             </div>
           </section>

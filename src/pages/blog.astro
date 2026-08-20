@@ -63,22 +63,22 @@ const seoContent = {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #F5F1E8;
-    color: #0A1030;
+    background: #16100D;
+    color: #F0E7DB;
   }
 
   .blog-main-content {
     flex: 1;
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     width: 100%;
-    padding: 48px 32px 96px;
+    padding: 84px 48px 120px;
   }
 
   .blog-hero {
-    border-bottom: 1.5px solid #0A1030;
-    padding-bottom: 40px;
-    margin-bottom: 56px;
+    border-bottom: 1px solid #4A3E36;
+    padding-bottom: 64px;
+    margin-bottom: 72px;
   }
 
   .blog-hero-top {
@@ -86,22 +86,22 @@ const seoContent = {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 56px;
   }
 
   .back-home-link {
     font-family: var(--font-display);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #1230C8;
+    color: #D8F546;
     text-decoration: none;
-    transition: transform 0.15s ease;
+    transition: color 0.15s ease;
   }
 
   .back-home-link:hover {
-    transform: translateX(-4px);
+    color: #E2603D;
   }
 
   .blog-eyebrow {
@@ -109,35 +109,51 @@ const seoContent = {
     font-weight: 700;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: #FF6B4A;
+    color: #E2603D;
     margin: 0;
   }
 
   .blog-hero-title {
     font-family: var(--font-display);
-    font-size: clamp(36px, 5.5vw, 68px);
-    font-weight: 700;
-    line-height: 1.02;
-    letter-spacing: -0.05em;
-    margin: 0 0 20px;
-    max-width: 900px;
+    font-size: clamp(52px, 8vw, 118px);
+    font-weight: 500;
+    line-height: 0.88;
+    letter-spacing: -0.075em;
+    margin: 0 0 40px;
+    max-width: 1120px;
+    text-wrap: balance;
   }
 
   .accent-text {
-    color: #FF6B4A;
+    color: #D8F546;
+    font-family: var(--font-editorial);
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.035em;
   }
 
   .blog-hero-lead {
-    font-size: 18px;
+    font-size: clamp(17px, 1.7vw, 23px);
     line-height: 1.5;
-    color: #4B5169;
-    max-width: 720px;
+    color: #B6A99B;
+    max-width: 760px;
     margin: 0;
   }
 
   @media (max-width: 640px) {
     .blog-main-content {
-      padding: 32px 20px 64px;
+      padding: 52px 20px 80px;
+    }
+
+    .blog-hero-top {
+      align-items: flex-start;
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+
+    .blog-hero {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
     }
   }
 </style>

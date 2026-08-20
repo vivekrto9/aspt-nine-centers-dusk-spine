@@ -7,11 +7,40 @@ const read = (path) => readFileSync(new URL(path, root), "utf8");
 
 test("Nine Centres Dusk Spine declares canonical typography pairs and color tokens", () => {
   const baseCss = read("src/styles/base.css");
-  assert.equal(baseCss.includes("--color-cobalt: #1230C8;"), true);
-  assert.equal(baseCss.includes("--color-cream: #F5F1E8;"), true);
-  assert.equal(baseCss.includes("--color-accent: #FF6B4A;"), true);
-  assert.equal(baseCss.includes("--font-display: 'Unbounded'"), true);
-  assert.equal(baseCss.includes("--font-sans: 'Familjen Grotesk'"), true);
+  assert.equal(baseCss.includes("--color-cobalt: #D8F546;"), true);
+  assert.equal(baseCss.includes("--color-cream: #F0E7DB;"), true);
+  assert.equal(baseCss.includes("--color-accent: #E2603D;"), true);
+  assert.equal(baseCss.includes("--font-display: 'Bricolage Grotesque'"), true);
+  assert.equal(baseCss.includes("--font-editorial: 'Instrument Serif'"), true);
+  assert.equal(baseCss.includes("--font-sans: 'Karla'"), true);
+  assert.match(read("src/components/shared/Header.astro"), /height: 100vh/);
+  assert.match(read("src/components/home/sections/HomeHero.astro"), /Filed under — how you decide/);
+});
+
+test("homepage sections do not regress to the Cobalt palette", () => {
+  const sectionFiles = [
+    "HomeHero",
+    "BodygraphGeneratorSection",
+    "NineCentresSection",
+    "FourConceptsSection",
+    "FiveTypesSection",
+    "ThreeReadingsSection",
+    "HowItRunsSection",
+    "ClientLettersSection",
+    "FaqSection",
+    "ArticlesSection",
+    "FinalCtaSection",
+    "BodygraphExplorerView",
+  ];
+  const legacyPalette = /#(?:1230c8|0a1030|f5f1e8|ff6b4a|9096ad|4b5169|b9c4ff)/i;
+
+  for (const section of sectionFiles) {
+    assert.doesNotMatch(
+      read(`src/components/home/sections/${section}.astro`),
+      legacyPalette,
+      `${section} contains a legacy Cobalt color`,
+    );
+  }
 });
 
 test("Home page composes all 10 core sections in order", () => {

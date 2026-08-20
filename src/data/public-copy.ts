@@ -18,7 +18,7 @@ const homeDefaults: HomePageContent = {
   concepts_title: "Four words to learn first",
   types_eyebrow: "The five types",
   types_title: "Everybody is one of five",
-  types_hint: "Open a step to read its strategy",
+  types_hint: "Open a column to read its strategy",
   readings_eyebrow: "Readings",
   readings_title: "One reading, one payment",
   readings_note: "USD · sliding scale on request",

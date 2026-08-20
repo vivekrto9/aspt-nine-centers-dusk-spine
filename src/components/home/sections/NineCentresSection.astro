@@ -97,7 +97,7 @@ const staticChartData = {
     line-height: 0.72;
     letter-spacing: -0.06em;
     color: transparent;
-    -webkit-text-stroke: 1.5px #1230C8;
+    -webkit-text-stroke: 1.5px #D8F546;
   }
 
   .section-title-wrap {
@@ -109,7 +109,7 @@ const staticChartData = {
     font-weight: 700;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: #FF6B4A;
+    color: #E2603D;
     margin: 0 0 12px;
   }
 
@@ -147,7 +147,7 @@ const staticChartData = {
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #4B5169;
+    color: #6E6157;
   }
 
   .legend-box {
@@ -157,16 +157,16 @@ const staticChartData = {
   }
 
   .defined-box {
-    background: #1230C8;
+    background: #D8F546;
   }
 
   .open-box {
-    border: 1.5px solid #0A1030;
+    border: 1.5px solid #16100D;
   }
 
   .centres-list {
     display: grid;
-    border-top: 1.5px solid #0A1030;
+    border-top: 1.5px solid #16100D;
   }
 
   .centre-row {
@@ -174,7 +174,7 @@ const staticChartData = {
     align-items: center;
     gap: 14px;
     padding: 13px 0;
-    border-bottom: 1px solid rgba(10, 16, 48, 0.18);
+    border-bottom: 1px solid rgba(74, 62, 54, 0.18);
   }
 
   .centre-indicator {
@@ -185,11 +185,11 @@ const staticChartData = {
   }
 
   .defined-dot {
-    background: #1230C8;
+    background: #D8F546;
   }
 
   .open-dot {
-    border: 1.5px solid #0A1030;
+    border: 1.5px solid #16100D;
   }
 
   .centre-name {
@@ -205,13 +205,13 @@ const staticChartData = {
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
   }
 
   .canvas-plate-col {
     grid-column: 5 / span 4;
-    background: #1230C8;
-    border: 1.5px solid #0A1030;
+    background: #D8F546;
+    border: 1.5px solid #16100D;
     padding: 18px 12px 14px;
     display: flex;
     align-items: center;
@@ -229,7 +229,7 @@ const staticChartData = {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     padding-bottom: 11px;
-    border-bottom: 1.5px solid #0A1030;
+    border-bottom: 1.5px solid #16100D;
   }
 
   .col-head {
@@ -239,21 +239,21 @@ const staticChartData = {
     text-transform: uppercase;
   }
 
-  .head-body { color: #9096AD; }
-  .head-design { color: #1230C8; text-align: right; }
-  .head-person { color: #FF6B4A; text-align: right; }
+  .head-body { color: #9A8E82; }
+  .head-design { color: #D8F546; text-align: right; }
+  .head-person { color: #E2603D; text-align: right; }
 
   .activation-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     padding: 9.5px 0;
-    border-bottom: 1px solid rgba(10, 16, 48, 0.12);
+    border-bottom: 1px solid rgba(74, 62, 54, 0.12);
   }
 
   .planet-glyph {
     font-size: 15px;
-    color: #4B5169;
+    color: #6E6157;
   }
 
   .activation-val {
@@ -263,8 +263,8 @@ const staticChartData = {
     text-align: right;
   }
 
-  .design-val { color: #0A1030; }
-  .person-val { color: #4B5169; }
+  .design-val { color: #16100D; }
+  .person-val { color: #6E6157; }
 
   @media (max-width: 900px) {
     .section-header-grid {
@@ -281,4 +281,17 @@ const staticChartData = {
       padding-top: 0;
     }
   }
+
+  /* Dusk Spine theme */
+  .nine-centres-section { background: #16100D; color: #F0E7DB; border-top: 1px solid #33291F; }
+  .section-number { -webkit-text-stroke-color: #D8F546; }
+  .centres-col, .activations-col { border-top-color: #4A3E36; }
+  .centre-row, .activation-row { border-bottom-color: #33291F; }
+  .centre-name, .activation-val { color: #F0E7DB; }
+  .centre-state, .planet-glyph, .head-body { color: #9A8E82; }
+  .defined-box, .defined-dot { background: #D8F546; }
+  .open-box, .open-dot { border-color: #6E6157; }
+  .canvas-plate-col { background: #1F1815; border-color: #4A3E36; }
+  .head-design, .design-val { color: #D8F546; }
+  .head-person, .person-val { color: #E2603D; }
 </style>

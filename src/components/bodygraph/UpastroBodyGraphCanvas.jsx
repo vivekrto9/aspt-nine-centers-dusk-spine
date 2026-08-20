@@ -56,7 +56,6 @@ const DESIGN_COLOR = "var(--hd-design-pipe)";
 const PERSONALITY_COLOR = "var(--hd-personality-pipe)";
 const INACTIVE_CHANNEL_COLOR = "var(--hd-pipe-bg)";
 const ACTIVE_GATE_FILL = "var(--hd-gate-active-bg)";
-const INACTIVE_GATE_FILL = "transparent";
 const OPEN_CENTER_FILL = "var(--hd-pipe-bg)";
 const DIMMED_CENTER_OPACITY = 0.12;
 const DIMMED_CHANNEL_OPACITY = 0.105;
@@ -232,8 +231,6 @@ const HUMAN_FIGURE_PATH = `M671.25,720.333
         c65.989-163.213,263.609-628.923,322.634-766.192c10.524-24.476,24.68-31.761,24.832-31.859
         C645.625,727.5,653.981,723.124,671.25,720.333z`;
 
-const LIGHT_CENTER_TEXT = "rgba(0,0,0,0.52)";
-const DARK_CENTER_TEXT = "rgba(255,255,255,0.74)";
 
 const GATE_TO_CENTER = Object.entries(CENTER_GATES).reduce(
   (acc, [centerName, gates]) => {
@@ -286,29 +283,20 @@ const isCenterDefinitionActive = (center) => {
   return state === "defined" || state === "active";
 };
 
-const getInactiveGateTextColor = (gate, centerFill) => {
-  if (centerFill === OPEN_CENTER_FILL) {
-    return "var(--hd-personality-pipe)";
-  }
-
-  const centerName = GATE_TO_CENTER[gate];
-
-  return ["G", "Head"].includes(centerName)
-    ? LIGHT_CENTER_TEXT
-    : DARK_CENTER_TEXT;
-};
+const getInactiveGateTextColor = (_gate, centerFill) =>
+  centerFill === OPEN_CENTER_FILL
+    ? "var(--hd-gate-inactive-open)"
+    : "var(--hd-gate-inactive-defined)";
 
 const getActiveGateFill = (centerFill) =>
   centerFill === OPEN_CENTER_FILL ? "var(--hd-personality-pipe)" : ACTIVE_GATE_FILL;
 
 const getActiveGateTextColor = (centerFill) =>
   centerFill === OPEN_CENTER_FILL
-    ? "var(--hd-pipe-bg)"
+    ? "#16100D"
     : "var(--hd-gate-active-text)";
 
-const getGateFontWeight = (gate, active) => {
-  return active ? "600" : "400";
-};
+const getGateFontWeight = (_gate, active) => (active ? "700" : "600");
 
 const getPlanetSymbolScale = (symbol) => {
   return 1;

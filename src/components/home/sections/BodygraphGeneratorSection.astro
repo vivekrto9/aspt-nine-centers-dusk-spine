@@ -2,6 +2,7 @@
 import PlaceAutocomplete from "../../shared/PlaceAutocomplete.astro";
 
 interface Props {
+  embedded?: boolean;
   resultHref?: string;
   title?: string;
   description?: string;
@@ -9,10 +10,10 @@ interface Props {
   descriptionEdit?: Record<string, string>;
 }
 
-const { resultHref = "/human-design", title = "Generate your bodygraph", description = "The chart plus a short summary of your type, authority and profile. Do not know your birth time? An estimate is fine.", titleEdit = {}, descriptionEdit = {} } = Astro.props;
+const { embedded = false, resultHref = "/human-design", title = "Generate your bodygraph", description = "The chart plus a short summary of your type, authority and profile. Do not know your birth time? An estimate is fine.", titleEdit = {}, descriptionEdit = {} } = Astro.props;
 ---
 
-<section id="chart" class="generator-section" data-generator-section>
+<section id="chart" class:list={["generator-section", { "is-embedded": embedded }]} data-generator-section>
   <div class="generator-container">
     <!-- Form & Result Card -->
     <div class="tilted-card" data-tilted-card>
@@ -251,8 +252,11 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
 
 <style>
   .generator-section {
-    background-image: linear-gradient(#1230C8 0 46%, #F5F1E8 46% 100%);
-    padding: 0 32px;
+    background:
+      linear-gradient(90deg, transparent 0 24.9%, rgba(216, 245, 70, .035) 25% 25.1%, transparent 25.2% 49.9%, rgba(216, 245, 70, .035) 50% 50.1%, transparent 50.2%),
+      #16100D;
+    padding: 72px 32px 88px;
+    border-top: 1px solid #33291F;
   }
 
   .generator-container {
@@ -265,10 +269,10 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
 
   .tilted-card {
     grid-column: 2 / span 6;
-    transform: rotate(-1.1deg);
-    background: #F5F1E8;
-    border: 1.5px solid #0A1030;
-    box-shadow: 16px 16px 0 #FF6B4A;
+    transform: rotate(-0.65deg);
+    background: #1F1815;
+    border: 1px solid #4A3E36;
+    box-shadow: 14px 14px 0 #E2603D;
     padding: 36px 34px 38px;
   }
 
@@ -302,7 +306,7 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     font-weight: 700;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: #1230C8;
+    color: #D8F546;
     margin: 0;
   }
 
@@ -311,7 +315,7 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     font-weight: 700;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
     margin: 0;
   }
 
@@ -323,13 +327,13 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
     cursor: pointer;
     transition: color 0.15s ease;
   }
 
   .start-over-btn:hover {
-    color: #1230C8;
+    color: #D8F546;
   }
 
   .card-title {
@@ -344,7 +348,7 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
   .card-desc {
     font-size: 15.5px;
     line-height: 1.6;
-    color: #4B5169;
+    color: #B6A99B;
     margin: 0 0 30px;
     text-wrap: pretty;
   }
@@ -372,12 +376,13 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #4B5169;
+    color: #9A8E82;
   }
 
   .field-input {
-    background: #FFFFFF;
-    border: 1.5px solid #0A1030;
+    background: #16100D;
+    color: #F0E7DB;
+    border: 1px solid #4A3E36;
     padding: 12px 14px;
     font-size: 16px;
     width: 100%;
@@ -386,15 +391,15 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
   }
 
   .field-input:focus {
-    border-color: #FF6B4A;
+    border-color: #D8F546;
   }
 
   .submit-btn {
     grid-column: span 2;
     margin-top: 6px;
-    background: #1230C8;
-    color: #F5F1E8;
-    border: 1.5px solid #0A1030;
+    background: #D8F546;
+    color: #16100D;
+    border: 1px solid #D8F546;
     padding: 17px 18px;
     font-size: 11px;
     font-weight: 700;
@@ -405,8 +410,8 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
   }
 
   .submit-btn:hover {
-    background: #FF6B4A;
-    color: #0A1030;
+    background: #E2603D;
+    color: #16100D;
   }
 
   .form-disclaimer {
@@ -416,14 +421,14 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     line-height: 1.8;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
     margin: 0;
   }
 
   .form-status {
     grid-column: span 2;
     margin: 0;
-    color: #1230C8;
+    color: #D8F546;
     font-weight: 700;
     font-size: 12px;
   }
@@ -443,12 +448,12 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
     margin: 0 0 26px;
   }
 
   .result-keys-list {
-    border-top: 1.5px solid #0A1030;
+    border-top: 1px solid #4A3E36;
   }
 
   .key-row {
@@ -457,7 +462,7 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     justify-content: space-between;
     gap: 16px;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(10, 16, 48, 0.18);
+    border-bottom: 1px solid #33291F;
   }
 
   .key-label {
@@ -465,7 +470,7 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #4B5169;
+    color: #9A8E82;
   }
 
   .key-value {
@@ -483,7 +488,7 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
   }
 
   .note-card {
-    border-left: 3px solid #FF6B4A;
+    border-left: 3px solid #E2603D;
     padding-left: 16px;
   }
 
@@ -499,7 +504,7 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
   .note-body {
     font-size: 14.5px;
     line-height: 1.6;
-    color: #4B5169;
+    color: #B6A99B;
     margin: 0;
     text-wrap: pretty;
   }
@@ -513,9 +518,9 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
 
   .action-btn-primary {
     flex: 1 1 auto;
-    background: #1230C8;
-    color: #F5F1E8;
-    border: 1.5px solid #0A1030;
+    background: #D8F546;
+    color: #16100D;
+    border: 1px solid #D8F546;
     padding: 14px 16px;
     font-size: 10px;
     font-weight: 700;
@@ -527,8 +532,8 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
   }
 
   .action-btn-primary:hover {
-    background: #FF6B4A;
-    color: #0A1030;
+    background: #E2603D;
+    color: #16100D;
   }
 
   .side-note-box {
@@ -542,10 +547,64 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #4B5169;
+    color: #9A8E82;
     margin: 0;
     max-width: 24ch;
     text-wrap: pretty;
+  }
+
+  .generator-section.is-embedded {
+    background: transparent;
+    padding: 0;
+    border: 0;
+  }
+
+  .generator-section.is-embedded .generator-container {
+    display: block;
+    max-width: none;
+  }
+
+  .generator-section.is-embedded .tilted-card {
+    transform: none;
+    border-color: #4A3E36;
+    border-top: 4px solid #D8F546;
+    box-shadow: none;
+    padding: 32px 30px 34px;
+  }
+
+  .generator-section.is-embedded .card-title {
+    font-size: 34px;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+
+  .generator-section.is-embedded .card-desc {
+    font-size: 15px;
+    line-height: 1.62;
+    margin-bottom: 28px;
+  }
+
+  .generator-section.is-embedded .form-grid {
+    gap: 20px;
+  }
+
+  .generator-section.is-embedded .field-input {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #4A3E36;
+    padding: 9px 0;
+  }
+
+  .generator-section.is-embedded .field-input:focus {
+    border-bottom-color: #D8F546;
+  }
+
+  .generator-section.is-embedded .submit-btn:hover {
+    background: #F0E7DB;
+  }
+
+  .generator-section.is-embedded .side-note-box {
+    display: none;
   }
 
   @media (max-width: 900px) {
@@ -555,7 +614,10 @@ const { resultHref = "/human-design", title = "Generate your bodygraph", descrip
     .tilted-card {
       grid-column: span 1;
       transform: none;
-      box-shadow: 10px 10px 0 #FF6B4A;
+      box-shadow: 10px 10px 0 #E2603D;
+    }
+    .generator-section.is-embedded .tilted-card {
+      box-shadow: none;
     }
     .side-note-box {
       grid-column: span 1;

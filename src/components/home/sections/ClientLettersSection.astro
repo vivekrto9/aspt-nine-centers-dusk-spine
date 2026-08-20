@@ -23,8 +23,8 @@ const { eyebrow = "Letters from clients", eyebrowEdit = {} } = Astro.props;
 <style>
   .client-letters-section {
     margin-top: 104px;
-    background: #1230C8;
-    color: #F5F1E8;
+    background: #D8F546;
+    color: #F0E7DB;
     padding: 64px 32px;
   }
 
@@ -33,7 +33,7 @@ const { eyebrow = "Letters from clients", eyebrowEdit = {} } = Astro.props;
     font-weight: 700;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: #FF6B4A;
+    color: #E2603D;
     margin: 0 0 44px;
   }
 
@@ -70,7 +70,7 @@ const { eyebrow = "Letters from clients", eyebrowEdit = {} } = Astro.props;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #B9C4FF;
+    color: #B6A99B;
   }
 
   @media (max-width: 900px) {
@@ -88,4 +88,11 @@ const { eyebrow = "Letters from clients", eyebrowEdit = {} } = Astro.props;
       padding: 48px 20px;
     }
   }
+
+  /* Dusk Spine theme */
+  .client-letters-section { margin-top: 0; background: #1F1815; color: #F0E7DB; border-block: 1px solid #33291F; }
+  .letters-grid { border-top: 1px solid #4A3E36; padding-top: 34px; }
+  .testimonial-card { border-right: 1px solid #33291F; padding-right: 34px; }
+  .testimonial-card:last-child { border-right: 0; }
+  .testimonial-author { color: #9A8E82; }
 </style>

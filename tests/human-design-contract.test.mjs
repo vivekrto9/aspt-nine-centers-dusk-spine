@@ -19,6 +19,12 @@ test("home chart flow calls the generated-site API and reveals its saved result 
   assert.match(result, /seo_robots:\s*"noindex,nofollow"/);
 });
 
+test("blog chart CTA returns visitors to the homepage chart form", () => {
+  const articleBody = read("src/components/blog/BlogArticleBody.astro");
+  assert.match(articleBody, /localizePath\("\/", locale\).*#chart/);
+  assert.doesNotMatch(articleBody, /localizePath\("\/human-design", locale\)/);
+});
+
 test("birth city fields use the shared Google Places selector and submit resolved coordinates", () => {
   const generator = read("src/components/home/sections/BodygraphGeneratorSection.astro");
   const chartForm = read("src/pages/human-design.astro");
@@ -54,12 +60,12 @@ test("all required Human Design visitor routes are implemented", () => {
   assert.match(read("src/pages/human-design/[slug].astro"), /chart-not-found/);
 });
 
-test("bodygraph result page exposes the Cobalt explorer workspace and interpretation sections", () => {
+test("bodygraph result page exposes the Dusk explorer workspace and interpretation sections", () => {
   const result = read("src/pages/human-design/[slug].astro");
   const canvas = read("src/components/bodygraph/UpastroBodyGraphCanvas.jsx");
   assert.match(result, /Bodygraph explorer/);
   assert.match(result, /<UpastroBodyGraphCanvas theme="dark"[\s\S]*client:only="react"/);
-  assert.match(result, /slot="fallback"[\s\S]*<BodyGraphCanvas theme="cobalt"/);
+  assert.match(result, /slot="fallback"[\s\S]*<BodyGraphCanvas theme="dusk"/);
   assert.match(canvas, /const PRIORITY_ACTIVE_OVERLAY_CHANNELS/);
   assert.match(canvas, /const INTEGRATION_CLUSTER_ALL_CHANNELS/);
   assert.match(canvas, /const getChannelSegments/);
@@ -109,6 +115,14 @@ test("bodygraph result page exposes the Cobalt explorer workspace and interpreta
   assert.match(read("src/styles/hd-routes.css"), /\.hd-properties-drawer \{[\s\S]*width: 50vw/);
   assert.match(read("src/styles/hd-routes.css"), /\.hd-energy-visual \{[\s\S]*aspect-ratio: 1 \/ 1/);
   assert.doesNotMatch(read("src/styles/hd-routes.css"), /\.hd-guide-panel__viewport \{[^}]*overscroll-behavior:\s*contain/);
+});
+
+test("response page hydrates one React runtime and clears the fixed Dusk spine safely", () => {
+  const config = read("astro.config.mjs");
+  const styles = read("src/styles/hd-routes.css");
+  assert.match(config, /dedupe:\s*\["react",\s*"react-dom"\]/);
+  assert.match(styles, /\.hd-reading \.hd-bodygraph-page \{[\s\S]*?padding-left:\s*86px/);
+  assert.match(styles, /@media \(max-width: 768px\) \{[\s\S]*?\.hd-reading \.hd-bodygraph-page \{[\s\S]*?padding-left:\s*0/);
 });
 
 test("successful Stripe payment returns to and unlocks the linked saved chart", () => {

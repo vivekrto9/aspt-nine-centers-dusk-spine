@@ -242,8 +242,8 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
 
 <style>
   .explore-view-wrap {
-    background: #F5F1E8;
-    color: #0A1030;
+    background: #F0E7DB;
+    color: #16100D;
     min-height: 100vh;
   }
 
@@ -264,7 +264,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: #FF6B4A;
+    color: #E2603D;
     margin: 0 0 14px;
   }
 
@@ -282,26 +282,26 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
     margin: 14px 0 0;
   }
 
   .back-btn {
-    background: #F5F1E8;
-    border: 1.5px solid #0A1030;
+    background: #F0E7DB;
+    border: 1.5px solid #16100D;
     padding: 12px 20px;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #0A1030;
+    color: #16100D;
     cursor: pointer;
     transition: all 0.15s ease;
   }
 
   .back-btn:hover {
-    background: #0A1030;
-    color: #F5F1E8;
+    background: #16100D;
+    color: #F0E7DB;
   }
 
   .controls-section {
@@ -326,15 +326,15 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     text-transform: uppercase;
     padding: 9px 14px;
     cursor: pointer;
-    border: 1.5px solid #0A1030;
-    background: #F5F1E8;
-    color: #0A1030;
+    border: 1.5px solid #16100D;
+    background: #F0E7DB;
+    color: #16100D;
     transition: all 0.15s ease;
   }
 
   .ctrl-btn.active, .guide-btn.active {
-    background: #1230C8;
-    color: #F5F1E8;
+    background: #D8F546;
+    color: #F0E7DB;
   }
 
   .workspace-section {
@@ -349,8 +349,8 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
   }
 
   .canvas-box {
-    background: #1230C8;
-    border: 1.5px solid #0A1030;
+    background: #D8F546;
+    border: 1.5px solid #16100D;
     padding: 26px;
     display: grid;
     grid-template-columns: 66px minmax(0, 1fr) 66px;
@@ -366,12 +366,12 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #F5F1E8;
+    color: #F0E7DB;
     margin: 0 0 14px;
   }
 
   .col-title.accent {
-    color: #FF6B4A;
+    color: #E2603D;
     text-align: right;
   }
 
@@ -380,7 +380,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     align-items: center;
     gap: 8px;
     padding: 6.5px 0;
-    border-bottom: 1px solid rgba(245, 241, 232, 0.16);
+    border-bottom: 1px solid rgba(240, 231, 219, 0.16);
   }
 
   .act-item.right-align {
@@ -389,7 +389,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
 
   .act-glyph {
     font-size: 13px;
-    color: #B9C4FF;
+    color: #B6A99B;
     width: 14px;
   }
 
@@ -397,7 +397,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-family: var(--font-sans);
     font-size: 12px;
     font-weight: 600;
-    color: #F5F1E8;
+    color: #F0E7DB;
   }
 
   .canvas-center {
@@ -420,7 +420,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #B9C4FF;
+    color: #B6A99B;
     margin: 0;
   }
 
@@ -437,26 +437,26 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #B9C4FF;
+    color: #B6A99B;
   }
 
   .chip-def {
     width: 9px;
     height: 9px;
-    background: #F5F1E8;
+    background: #F0E7DB;
     display: block;
   }
 
   .chip-open {
     width: 9px;
     height: 9px;
-    border: 1px solid #F5F1E8;
+    border: 1px solid #F0E7DB;
     display: block;
   }
 
   .guide-panel-box {
-    background: #F5F1E8;
-    border: 1.5px solid #0A1030;
+    background: #F0E7DB;
+    border: 1.5px solid #16100D;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -465,7 +465,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
   .panel-subtabs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-bottom: 1.5px solid #0A1030;
+    border-bottom: 1.5px solid #16100D;
   }
 
   .tab-btn {
@@ -478,13 +478,13 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     border: none;
     cursor: pointer;
     background: transparent;
-    color: #9096AD;
+    color: #9A8E82;
     transition: all 0.15s ease;
   }
 
   .tab-btn.active {
-    color: #0A1030;
-    border-bottom: 2px solid #1230C8;
+    color: #16100D;
+    border-bottom: 2px solid #D8F546;
   }
 
   .subtab-content {
@@ -504,7 +504,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
   .panel-main-desc {
     font-size: 14.5px;
     line-height: 1.6;
-    color: #4B5169;
+    color: #6E6157;
     margin: 0 0 24px;
   }
 
@@ -515,7 +515,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
   }
 
   .learn-item {
-    border-top: 1px solid rgba(10, 16, 48, 0.18);
+    border-top: 1px solid rgba(74, 62, 54, 0.18);
     padding-top: 18px;
   }
 
@@ -528,7 +528,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
   .learn-item-body {
     font-size: 14.5px;
     line-height: 1.6;
-    color: #4B5169;
+    color: #6E6157;
     margin: 0;
     text-wrap: pretty;
   }
@@ -547,14 +547,14 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-size: 12.5px;
     padding: 8px 11px;
     cursor: pointer;
-    border: 1.5px solid #0A1030;
-    background: #F5F1E8;
-    color: #4B5169;
+    border: 1.5px solid #16100D;
+    background: #F0E7DB;
+    color: #6E6157;
   }
 
   .chip-btn.selected {
-    background: #0A1030;
-    color: #F5F1E8;
+    background: #16100D;
+    color: #F0E7DB;
   }
 
   .dot {
@@ -564,11 +564,11 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     display: block;
   }
 
-  .dot.def { background: #1230C8; }
-  .dot.op { border: 1.5px solid #0A1030; }
+  .dot.def { background: #D8F546; }
+  .dot.op { border: 1.5px solid #16100D; }
 
   .centre-detail-card {
-    border-top: 1px solid rgba(10, 16, 48, 0.18);
+    border-top: 1px solid rgba(74, 62, 54, 0.18);
     padding-top: 20px;
     display: flex;
     flex-direction: column;
@@ -580,7 +580,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #1230C8;
+    color: #D8F546;
     margin: 0 0 4px;
   }
 
@@ -602,7 +602,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
   .detail-body {
     font-size: 14.5px;
     line-height: 1.6;
-    color: #4B5169;
+    color: #6E6157;
     margin: 0;
   }
 
@@ -611,7 +611,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     flex-direction: column;
     gap: 10px;
     padding-top: 16px;
-    border-top: 1px solid rgba(10, 16, 48, 0.18);
+    border-top: 1px solid rgba(74, 62, 54, 0.18);
   }
 
   .detail-gates-label {
@@ -619,7 +619,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
   }
 
   .gates-badges-row {
@@ -634,13 +634,13 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     min-width: 32px;
     text-align: center;
     padding: 7px 8px;
-    background: rgba(10, 16, 48, 0.08);
-    color: #9096AD;
+    background: rgba(74, 62, 54, 0.08);
+    color: #9A8E82;
   }
 
   .gate-badge.active {
-    background: #1230C8;
-    color: #F5F1E8;
+    background: #D8F546;
+    color: #F0E7DB;
   }
 
   .badge-hint {
@@ -648,7 +648,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
   }
 
   /* Energy Type Panel Styles */
@@ -661,7 +661,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
 
   .energy-hero-box {
     aspect-ratio: 4 / 3;
-    background: #1230C8;
+    background: #D8F546;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -675,7 +675,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #B9C4FF;
+    color: #B6A99B;
     margin: 0;
   }
 
@@ -686,21 +686,21 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     letter-spacing: -0.04em;
     margin: 0;
     text-align: center;
-    color: #F5F1E8;
+    color: #F0E7DB;
   }
 
   .energy-stats-row {
     display: flex;
     flex-wrap: wrap;
     gap: 0;
-    border: 1px solid #0A1030;
+    border: 1px solid #16100D;
   }
 
   .e-stat {
     padding: 16px 14px;
     flex: 1 1 90px;
     min-width: 0;
-    border-right: 1px solid rgba(10, 16, 48, 0.18);
+    border-right: 1px solid rgba(74, 62, 54, 0.18);
   }
 
   .e-stat:last-child {
@@ -720,13 +720,13 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
     margin: 0;
     line-height: 1.5;
   }
 
   .energy-specs-list {
-    border: 1px solid #0A1030;
+    border: 1px solid #16100D;
   }
 
   .e-row {
@@ -735,7 +735,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     align-items: center;
     justify-content: space-between;
     gap: 14px;
-    border-bottom: 1px solid rgba(10, 16, 48, 0.14);
+    border-bottom: 1px solid rgba(74, 62, 54, 0.14);
   }
 
   .e-row:last-child {
@@ -747,7 +747,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #9096AD;
+    color: #9A8E82;
     margin: 0 0 5px;
   }
 
@@ -758,12 +758,12 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
 
   .e-arrow {
     font-size: 14px;
-    color: #B9C4FF;
+    color: #B6A99B;
   }
 
   .energy-upsell-box {
-    border: 1.5px solid #0A1030;
-    background: #F5F1E8;
+    border: 1.5px solid #16100D;
+    background: #F0E7DB;
     padding: 28px 24px;
     display: flex;
     flex-direction: column;
@@ -783,7 +783,7 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
   .upsell-desc {
     font-size: 14px;
     line-height: 1.56;
-    color: #4B5169;
+    color: #6E6157;
     margin: 0;
     max-width: 30ch;
   }
@@ -793,9 +793,9 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #0A1030;
-    background: #FF6B4A;
-    border: 1.5px solid #0A1030;
+    color: #16100D;
+    background: #E2603D;
+    border: 1.5px solid #16100D;
     padding: 13px 22px;
     margin-top: 4px;
     text-decoration: none;
@@ -806,4 +806,27 @@ import BodyGraphCanvas from "../../bodygraph/BodyGraphCanvas.astro";
       grid-template-columns: 1fr;
     }
   }
+
+  /* Dusk Spine theme */
+  .explore-view-wrap { background: #16100D; color: #F0E7DB; }
+  .back-btn, .ctrl-btn, .guide-btn { background: transparent; color: #B6A99B; border-color: #4A3E36; }
+  .back-btn:hover, .ctrl-btn.active, .guide-btn.active { background: #D8F546; color: #16100D; border-color: #D8F546; }
+  .canvas-box { background: #1F1815; border-color: #4A3E36; }
+  .guide-panel-box { background: #1F1815; color: #F0E7DB; border-color: #4A3E36; }
+  .panel-subtabs, .centre-detail-card, .detail-gates-section { border-color: #33291F; }
+  .tab-btn.active, .detail-theme { color: #F0E7DB; }
+  .panel-main-desc, .learn-item-body, .detail-body { color: #9A8E82; }
+  .learn-item { border-color: #33291F; }
+  .chip-btn { background: #16100D; color: #B6A99B; border-color: #4A3E36; }
+  .chip-btn.selected { background: #D8F546; color: #16100D; border-color: #D8F546; }
+  .dot.op { border-color: #6E6157; }
+  .gate-badge { background: #241C18; color: #9A8E82; }
+  .gate-badge.active { background: #D8F546; color: #16100D; }
+  .energy-hero-box { background: #D8F546; color: #16100D; }
+  .e-tag, .e-name { color: #16100D; }
+  .energy-stats-row, .energy-specs-list { border-color: #4A3E36; }
+  .e-stat, .e-row { border-color: #33291F; }
+  .energy-upsell-box { background: #16100D; color: #F0E7DB; border-color: #4A3E36; }
+  .upsell-desc { color: #9A8E82; }
+  .upsell-btn { background: #D8F546; color: #16100D; border-color: #D8F546; }
 </style>

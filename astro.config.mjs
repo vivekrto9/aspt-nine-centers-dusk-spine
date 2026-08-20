@@ -88,6 +88,7 @@ export default defineConfig({
 		},
 		resolve: {
 			alias: cloudflareNativeModuleAliases,
+			dedupe: ["react", "react-dom"],
 		},
 		server: {
 			allowedHosts: ["7e44-223-181-57-33.ngrok-free.app"],
